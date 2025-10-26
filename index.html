@@ -121,41 +121,18 @@
             transition: width 0.5s ease;
         }
 
-        .image-container {
-            display: flex;
-            justify-content: space-around;
-            margin: 30px 0;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .image-placeholder {
-            width: 45%;
-            max-width: 300px;
-            height: 300px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .heart-decoration {
             font-size: 4rem;
             color: #ff4d6d;
-        }
-
-        .placeholder-1 {
-            background: linear-gradient(135deg, #ffafbd, #ffc3a0);
-        }
-
-        .placeholder-2 {
-            background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+            margin: 30px 0;
+            animation: heartbeat 1.5s infinite;
         }
 
         .image-caption {
             font-family: 'Dancing Script', cursive;
             font-size: 1.8rem;
             color: #8b0000;
-            margin: 10px 0 30px;
+            margin: 20px 0;
             text-align: center;
         }
 
@@ -294,10 +271,17 @@
             100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
         }
 
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
         @media (max-width: 768px) {
             h1 { font-size: 2.5rem; }
             .quiz-title { font-size: 2.2rem; }
-            .image-placeholder { width: 100%; }
             .yes-no-container { flex-direction: column; align-items: center; }
             .yes-no-btn { max-width: 100%; width: 100%; }
         }
@@ -351,12 +335,10 @@
         <div class="letter-container" id="letterContainer">
             <h1>My Love for You</h1>
             
-            <div class="image-container">
-                <div class="image-placeholder placeholder-1">💖</div>
-                <div class="image-placeholder placeholder-2">🌹</div>
-            </div>
-            
+            <div class="heart-decoration">💖</div>
             <div class="image-caption">"My heart is all yours"</div>
+            
+            <div class="heart-decoration">🌹</div>
             <div class="image-caption">"Every love story is beautiful, but ours is my favorite"</div>
             
             <div class="vow-section">
